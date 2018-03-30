@@ -1,0 +1,247 @@
+/*************** main board and overall layout **************/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  margin-top: 18px;
+  width: 393px;
+  animation: flash 3s;
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.box {
+  width: 125px;
+  height: 0;
+  border: 3px solid blueviolet;
+  padding-bottom: 125px;
+  flex: 1 0 auto;
+  height: auto;
+}
+
+@media screen and (max-width: 390px) {
+  .board {
+    margin-top: 18px;
+    width: 268px;
+  }
+  .box {
+    width: 83px;
+    height: 0;
+    border: 3px solid blueviolet;
+    padding-bottom: 83px;
+    flex: 1 0 auto;
+    height: auto;
+  }
+}
+@media screen and (max-width: 240px) {
+  .board {
+    margin-top: 18px;
+    width: 147px;
+  }
+  .box {
+    width: 43px;
+    height: 0;
+    border: 3px solid blueviolet;
+    padding-bottom: 43px;
+    flex: 1 0 auto;
+    height: auto;
+  }
+}
+
+#header {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 10px;
+  animation: flash 2s;
+}
+
+#header::first-letter {
+  font-size: 52px;
+  color: blueviolet;
+}
+
+#header span {
+  font-size: 14px;
+  color: white;
+  background-color: #d0cbd6;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.board .box:hover {
+  background-color: thistle;
+}
+
+/**************** dropdowns ********************/
+
+.dropdown-nav {
+  width: 100%;
+  max-width: 542px;
+  margin-top: 33px;
+  cursor: pointer;
+  animation: flash 5s;
+}
+
+.container select {
+  background-color: lavender;
+  color: #2d2c2c;
+  width: 34%;
+  height: 40px;
+  padding: 0;
+  border-radius: 0;
+  margin: 0 11px;
+}
+
+.container select:focus {
+  outline: none;
+}
+
+#x-var {
+  font-size: 20px;
+  color: blue;
+}
+
+/************** Buttons ***************************/
+
+.actions>button {
+  background-color: blueviolet;
+  color: lightgray;
+  width: 34%;
+  height: 40px;
+  padding: 0;
+  border-radius: 0;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px 13px;
+  cursor: pointer;
+  animation: flash 3s;
+}
+
+.container button:focus {
+  outline: none;
+}
+
+.actions {
+  width: 100%;
+  max-width: 542px;
+}
+
+.container button:hover {
+  background-color: lavender;
+  color: purple;
+}
+
+.container button:active {
+  background-color: lightblue;
+  color: white;
+}
+
+/****************** X & O ********************/
+
+.x:before {
+  display: block;
+  content: "";
+  left: 63px;
+  width: 10px;
+  height: 132px;
+  background-color: lightseagreen;
+  border-radius: 5px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+}
+
+.x:after {
+  display: block;
+  content: "";
+  left: 63px;
+  width: 10px;
+  height: 132px;
+  background-color: lightseagreen;
+  border-radius: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+}
+
+.o {
+  top: 280px;
+  left: 15px;
+  width: 80px;
+  height: 80px;
+  border: 8px solid lightcoral;
+  border-radius: 50%;
+  position: absolute;
+}
+
+/********************* border adjustments **********************/
+
+#s1 {
+  border-top: none;
+  border-left: none;
+}
+
+#s2 {
+  border-top: none;
+}
+
+#s3 {
+  border-top: none;
+  border-right: none;
+}
+
+#s4 {
+  border-left: none;
+}
+
+#s6 {
+  border-right: none;
+}
+
+#s7 {
+  border-left: none;
+  border-bottom: none;
+}
+
+#s8 {
+  border-bottom: none;
+}
+
+#s9 {
+  border-bottom: none;
+  border-right: none;
+}
