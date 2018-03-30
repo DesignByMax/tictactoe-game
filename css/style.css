@@ -1,8 +1,11 @@
 /*************** main board and overall layout **************/
 
+html,
 body {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -45,11 +48,12 @@ body {
 
 .box {
   width: 125px;
-  height: 0;
+  height: 125px;
   border: 3px solid blueviolet;
-  padding-bottom: 125px;
   flex: 1 0 auto;
-  height: auto;
+  font-size: 115px;
+  text-align: center;
+  font-weight: 100;
 }
 
 @media screen and (max-width: 390px) {
@@ -59,13 +63,37 @@ body {
   }
   .box {
     width: 83px;
-    height: 0;
+    height: 83px;
     border: 3px solid blueviolet;
-    padding-bottom: 83px;
     flex: 1 0 auto;
+    font-size: 77px;
+    text-align: center;
+    font-weight: 100;
+  }
+  img.sean {
+    max-width: 83px;
     height: auto;
   }
+  
+  img.square-svg {
+    display: flex;
+    max-width: 54px;
+    height: auto;
+    margin: 10px auto;
+  }
+  #header {
+    font-size: 26px !important;
+  }
+  
+  #header::first-letter {
+    font-size: 32px !important;
+  }
+  
+  #header span {
+    font-size: 12px !important;
+  }
 }
+
 @media screen and (max-width: 240px) {
   .board {
     margin-top: 18px;
@@ -73,11 +101,34 @@ body {
   }
   .box {
     width: 43px;
-    height: 0;
+    height: 43px;
     border: 3px solid blueviolet;
-    padding-bottom: 43px;
     flex: 1 0 auto;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 100;
+  }
+  img.sean {
+    max-width: 43px;
     height: auto;
+  }
+  
+  img.square-svg {
+    display: flex;
+    max-width: 23px;
+    height: auto;
+    margin: 10px auto !important;
+  }
+  #header {
+    font-size: 16px !important;
+  }
+  
+  #header::first-letter {
+    font-size: 22px !important;
+  }
+  
+  #header span {
+    font-size: 7px !important;
   }
 }
 
@@ -86,6 +137,13 @@ body {
   font-weight: 400;
   letter-spacing: 10px;
   animation: flash 2s;
+  width: 100%;
+  margin-top: 47px;
+  background-color: #9299c5;
+  text-align: center;
+  margin: 0px;
+  padding: 24px;
+  height: 67px;
 }
 
 #header::first-letter {
@@ -105,7 +163,7 @@ body {
   background-color: thistle;
 }
 
-/**************** dropdowns ********************/
+/******************* dropdowns *********************/
 
 .dropdown-nav {
   width: 100%;
@@ -129,12 +187,12 @@ body {
   outline: none;
 }
 
-#x-var {
+.selection {
   font-size: 20px;
-  color: blue;
+  color: blueviolet;
 }
 
-/************** Buttons ***************************/
+/********************* Buttons ***************************/
 
 .actions>button {
   background-color: blueviolet;
@@ -170,42 +228,18 @@ body {
   color: white;
 }
 
-/****************** X & O ********************/
+/****************** sean & square ********************/
 
-.x:before {
-  display: block;
-  content: "";
-  left: 63px;
-  width: 10px;
-  height: 132px;
-  background-color: lightseagreen;
-  border-radius: 5px;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  position: absolute;
+img.sean {
+  width: 125px;
+  height: auto;
 }
 
-.x:after {
-  display: block;
-  content: "";
-  left: 63px;
-  width: 10px;
-  height: 132px;
-  background-color: lightseagreen;
-  border-radius: 5px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  position: absolute;
-}
-
-.o {
-  top: 280px;
-  left: 15px;
-  width: 80px;
-  height: 80px;
-  border: 8px solid lightcoral;
-  border-radius: 50%;
-  position: absolute;
+img.square-svg {
+  display: flex;
+  width: 88px;
+  height: auto;
+  margin: 18px auto;
 }
 
 /********************* border adjustments **********************/
