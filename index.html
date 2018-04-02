@@ -17,57 +17,65 @@
 
   <div class="container flex-wrapper flex-column flex-center">
     <!-- title -->
-    <div id="header">
-      Tic Tac Toe
-      <span>by Max</span>
-    </div>
+    <div id="header">Tic Tac Toe</div>
     <!-- dropdowns -->
     <div class="dropdown-nav flex-wrapper flex-center">
       <!-- X variants dropdown -->
-      <select class="selection" id="x-var" onchange="playerOneSelect(this.options[selectedIndex].value)">
-        <option value="x" selected="selected">
-          X
-        </option>
-        <option value="sq">
-          &#x25A2;
-        </option>
+      <label for="player1">Player 1:</label><br><br>
+      <select name="player1" class="selection" id="x-var" onchange="playerOneSelect(this.options[selectedIndex].value)">
+        <option value="x">X</option>
+        <option value="sq">&#x25A2;</option>
       </select>
       <!-- O variants dropdown -->
-      <select class="selection" id="o-var" onchange="playerTwoSelect(this.options[selectedIndex].value)">
-        <option value="o" selected="selected">
-          O
-        </option>
-        <option value="sean">
-          Sean Connery
-        </option>
+      <label for="player2">Player 2:</label><br>
+      <select name="player2" class="selection" id="o-var" onchange="playerTwoSelect(this.options[selectedIndex].value)">
+        <option value="o">O</option>
+        <option value="sean">Sean Connery</option>
       </select>
     </div>
 
     <!-- main board -->
-    <div class="flex-wrapper board">
+    <div class="board">
+      <div class="cell flex-wrapper">
+        <div class="box" id="s1"></div>
+        <div class="box" id="s2"></div>
+        <div class="box" id="s3"></div>
+      </div>
 
-      <div class="box" id="s1"></div>
-      <div class="box" id="s2"></div>
-      <div class="box" id="s3"></div>
+      <div class="cell flex-wrapper">
+        <div class="box" id="s4"></div>
+        <div class="box" id="s5"></div>
+        <div class="box" id="s6"></div>
+      </div>
 
-      <div class="box" id="s4"></div>
-      <div class="box" id="s5"></div>
-      <div class="box" id="s6"></div>
-
-      <div class="box" id="s7"></div>
-      <div class="box" id="s8"></div>
-      <div class="box" id="s9"></div>
-
+      <div class="cell flex-wrapper">
+        <div class="box" id="s7"></div>
+        <div class="box" id="s8"></div>
+        <div class="box" id="s9"></div>
+      </div>
     </div>
+
+    <!-- modal notifier -->
+    <div id="modal" class="modal flex-wrapper flex-column">
+      <div class="content"></div><br>
+
+      <div id="player1-score" class="score"></div><br>
+      <div id="player2-score" class="score"></div><br>
+      <button class="btn-x" onclick="closeModal()">Close</button>
+    </div>
+
+    <div id="notify-modal" class="notify-modal flex-wrapper flex-wrap">
+      <div class="content"></div>
+    </div>
+
+    <!-- action buttons -->
     <div class="flex-wrapper actions flex-center">
-      <button id="undo">
+      <button onclick="undo()" id="undo">
         <span class="fas fa-undo"></span>
       </button>
-      <button id="reset">Reset</button>
+      <button onclick="restartGame()" id="reset">Restart Game</button>
     </div>
   </div>
-
-
 
   <script src="./js/app.js"></script>
 </body>
